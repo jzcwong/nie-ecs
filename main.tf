@@ -4,12 +4,12 @@ resource "aws_ecs_task_definition" "nginxtf_task" {
   requires_compatibilities = ["FARGATE"]
   cpu                      = "256"
   memory                   = "512"
-  execution_role_arn       = "arn:aws:iam::142764079456:role/ecsTaskExecutionRole"
+  execution_role_arn       = "arn:aws:iam::000000000000:role/ecsTaskExecutionRole"
 
   container_definitions = jsonencode([
     {
       name      = "nginx-container"
-      image     = "142764079456.dkr.ecr.us-west-2.amazonaws.com/nie/nginx:latest"
+      image     = "000000000000.dkr.ecr.us-west-2.amazonaws.com/nie/nginx:latest"
       cpu       = 0
       essential = true
 
@@ -28,7 +28,7 @@ resource "aws_ecs_task_definition" "nginxtf_task" {
       environment = [
         {
           name  = "FALCONCTL_OPTS"
-          value = "--cid=E7B6821C49764043AA69EA4885711078-C0"
+          value = "--cid=00000000000000000000000000000000-00"
         }
       ]
 
@@ -72,7 +72,7 @@ resource "aws_ecs_task_definition" "nginxtf_task" {
     },
     {
       name      = "crowdstrike-falcon-init-container"
-      image     = "142764079456.dkr.ecr.us-west-2.amazonaws.com/nie/falcon-container:7.34.0-7306"
+      image     = "000000000000.dkr.ecr.us-west-2.amazonaws.com/nie/falcon-container:7.34.0-7306"
       cpu       = 0
       essential = false
 
