@@ -98,4 +98,8 @@ resource "aws_ecs_task_definition" "nginxtf_task" {
   volume {
     name = "crowdstrike-falcon-volume"
   }
+  runtime_platform {
+    operating_system_family = "LINUX"
+    cpu_architecture        = "ARM64"
+  }  
 }

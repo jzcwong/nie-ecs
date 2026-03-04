@@ -2,3 +2,4 @@
 *.tfplan
 *.terraform.lock.hcl
 *.tfstate
+*.tfstate.backup
